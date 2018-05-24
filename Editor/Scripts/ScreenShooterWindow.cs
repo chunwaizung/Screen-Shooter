@@ -250,7 +250,7 @@ namespace Borodar.ScreenShooter
             }                        
         }
 
-        [MenuItem("Screen Shooter/Take Screenshot &#s")]
+        [MenuItem("Screen Shooter/Take Screenshots &#s")]
         private static void TakeScreenshotOnHotkey()
         {
             EditorCoroutine.Start(TakeScreenshots());
