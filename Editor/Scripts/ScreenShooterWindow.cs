@@ -129,7 +129,6 @@ namespace Borodar.ScreenShooter
 
         private void OnGUISaveFolderInput()
         {
-
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label(_folderIcon, GUILayout.Width(24));
             GUILayout.Label("Save To", EditorStyles.boldLabel);
