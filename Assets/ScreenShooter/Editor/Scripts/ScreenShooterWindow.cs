@@ -25,10 +25,10 @@ namespace Borodar.ScreenShooter
 {    
     public class ScreenShooterWindow : EditorWindow
     {
-        private ScreenShooterSettings _settings;
+        private static ScreenShooterSettings _settings;
         private UnityEditorInternal.ReorderableList _list;
 
-        private bool _isMakingScreenshotsNow;
+        private static bool _isMakingScreenshotsNow;
         private bool _hasErrors;
 
         private Texture2D _takeButtonIcon;
@@ -44,7 +44,7 @@ namespace Borodar.ScreenShooter
         // Messages
         //---------------------------------------------------------------------
 
-        [MenuItem("Window/Screen Shooter")]
+        [MenuItem("Screen Shooter/Show Window")]
         protected static void ShowWindow()
         {
             var window = (ScreenShooterWindow) GetWindow(typeof(ScreenShooterWindow));
@@ -129,7 +129,6 @@ namespace Borodar.ScreenShooter
 
         private void OnGUISaveFolderInput()
         {
-
             EditorGUILayout.BeginHorizontal();
             GUILayout.Label(_folderIcon, GUILayout.Width(24));
             GUILayout.Label("Save To", EditorStyles.boldLabel);
@@ -191,7 +190,7 @@ namespace Borodar.ScreenShooter
         }
 
         [SuppressMessage("ReSharper", "PossibleLossOfFraction")]
-        private IEnumerator TakeScreenshots()
+        private static IEnumerator TakeScreenshots()
         {
             _isMakingScreenshotsNow = true;
             var currentIndex = GameViewUtil.GetCurrentSizeIndex();
@@ -250,6 +249,12 @@ namespace Borodar.ScreenShooter
             }                        
         }
 
+        [MenuItem("Screen Shooter/Take Screenshots &#s")]
+        private static void TakeScreenshotOnHotkey()
+        {
+            EditorCoroutine.Start(TakeScreenshots());
+        }
+        
         private void MenuItemHandler(object target)
         {
             _settings.ScreenshotConfigs.Add(target as ScreenshotConfig);
