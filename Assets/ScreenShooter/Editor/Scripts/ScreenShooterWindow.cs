@@ -44,13 +44,19 @@ namespace Borodar.ScreenShooter
         // Messages
         //---------------------------------------------------------------------
 
-        [MenuItem("Screen Shooter/Show Window")]
+        [MenuItem("Tools/Screen Shooter/Show Window")]
         protected static void ShowWindow()
         {
             var window = (ScreenShooterWindow) GetWindow(typeof(ScreenShooterWindow));
             window.autoRepaintOnSceneChange = true;
             window.titleContent = new GUIContent("Screen Shooter");
             window.Show();
+        }
+        
+        [MenuItem("Tools/Screen Shooter/Take Screenshots &#s")]
+        private static void TakeScreenshotOnHotkey()
+        {
+            EditorCoroutine.Start(TakeScreenshots());
         }
 
         protected void OnEnable()
@@ -247,12 +253,6 @@ namespace Borodar.ScreenShooter
 
                 _isMakingScreenshotsNow = false;
             }                        
-        }
-
-        [MenuItem("Screen Shooter/Take Screenshots &#s")]
-        private static void TakeScreenshotOnHotkey()
-        {
-            EditorCoroutine.Start(TakeScreenshots());
         }
         
         private void MenuItemHandler(object target)
