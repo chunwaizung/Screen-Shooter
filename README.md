@@ -13,9 +13,9 @@ Features:
 
 ### ScreenShooter window
 
-Before being able to take screenshots, you will first need to open ScreenShooter window. Select **Window → ScreenShoooter** from the main menu, as follows:
+Before being able to take screenshots, you will first need to open ScreenShooter window. Select **Tools → ScreenShoooter → Show Window** from the main menu, as follows:
 
-![Screenshooter menu](https://raw.githubusercontent.com/PhannGor/phanngor.github.io/master/stuff/screenshooter/images/v1.2/menu.png)
+![Screenshooter menu](https://raw.githubusercontent.com/PhannGor/phanngor.github.io/master/stuff/screenshooter/images/v1.3/menu_01.png)
 
 ### Camera
 
@@ -51,7 +51,7 @@ If target folder doesn’t exist yet, it will be created when taking screenshots
 
 ### Take Screenshots
 
-Finally, you’re now able to take as many screenshots as you want, simply by pressing the **Take Screenshots** button!
+Finally, you’re now able to take as many screenshots as you want, simply by pressing the **Take Screenshots** button! Also, you can do that by using the **Alt+Shift+S** keyboard shortcut.
 
 **Please note:** There is currently a known bug within Unity itself preventing *"Screen space - Overlay"* UI items from being captured. Once Unity's Developers fix this bug UI elements should be captured correctly. As a workaround you can switch canvas render mode to *"Screen Space - Camera"* and set canvas plane distance close to camera near clipping plane.
 
