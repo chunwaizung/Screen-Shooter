@@ -18,6 +18,6 @@ namespace Borodar.ScreenShooter
     {
         public const string NAME = "ScreenShooter";
         public const string STORE_ID = "58659";
-        public const string VERSION = "1.3";
+        public const string VERSION = "1.4";
     }
 }
