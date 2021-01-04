@@ -72,6 +72,27 @@ namespace Borodar.ScreenShooter.Utils
 
             Debug.Log("Image saved to: " + imageFilePath);
         }
+        
+        public static void SaveScreenShotTextureAsFile(string folder, string prefix, string suffix, ScreenshotConfig screenshotConfig)
+        {
+            string extension;
+
+            switch (screenshotConfig.Type)
+            {
+                case ScreenshotConfig.Format.PNG:
+                    extension = ".png";
+                    break;
+                case ScreenshotConfig.Format.JPG:
+                    extension = ".jpg";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            var fileName = prefix + screenshotConfig.Name + "." + screenshotConfig.Width + "x" + screenshotConfig.Height + suffix;
+            var imageFilePath = folder + "/" + MakeValidFileName(fileName + extension);
+            UnityEngine.ScreenCapture.CaptureScreenshot(imageFilePath);
+        }
 
         private static string MakeValidFileName(string name)
         {
