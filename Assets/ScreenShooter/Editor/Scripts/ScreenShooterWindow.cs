@@ -234,9 +234,9 @@ namespace Borodar.ScreenShooter
 
                     // add some delay while applying changes
                     var lastFrameTime = EditorApplication.timeSinceStartup;
-                    while (EditorApplication.timeSinceStartup - lastFrameTime < 0.1f) yield return null;
-
+                    while (EditorApplication.timeSinceStartup - lastFrameTime < 0.2f) yield return null;
                     ScreenshotUtil.TakeScreenshot(_settings, data);
+                    yield return new WaitForSecondsRealtime(0.5f);
 
                     // just clean it up
                     GameViewUtil.RemoveCustomSize(sizeGroupType, index);
