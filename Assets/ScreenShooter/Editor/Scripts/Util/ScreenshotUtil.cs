@@ -41,7 +41,7 @@ namespace Borodar.ScreenShooter.Utils
             scrTexture.ReadPixels(new Rect(0, 0, scrTexture.width, scrTexture.height), 0, 0);
             scrTexture.Apply();
 
-            SaveTextureAsFile(scrTexture, folderName, prefix, suffix, screenshotConfig);
+            SaveScreenShotTextureAsFile(folderName, prefix, suffix, screenshotConfig);
         }
 
         public static void SaveTextureAsFile(Texture2D texture, string folder, string prefix, string suffix, ScreenshotConfig screenshotConfig)
