@@ -14,18 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   ScreenshotConfigs:
-  - Name: Nexus 4 Portrait
-    Width: 768
-    Height: 1280
-    Type: 0
-  - Name: iPad Hi-Res Portrait
-    Width: 1536
+  - Name: iPad
+    Width: 2732
     Height: 2048
-    Type: 0
-  - Name: 4K UHD
+    Type: 1
+  - Name: iPhone
+    Width: 2208
+    Height: 1242
+    Type: 1
+  - Name: iPhoneX
     Width: 3840
-    Height: 2160
-    Type: 0
+    Height: 1242
+    Type: 1
+  - Name: Mac
+    Width: 2880
+    Height: 1800
+    Type: 1
   Tag: 01_
   AppendTimestamp: 0
   SaveFolder: Screenshots
