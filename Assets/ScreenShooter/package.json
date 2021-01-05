@@ -2,7 +2,7 @@
     "name": "com.gui.screen-shooter",
     "displayName": "Screen Shooter",
     "description": "ScreenShooter allows you to take multiple screenshots at different resolutions with just one click, right from the Unity editor.",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "unity": "2019.4",
     "license": "MIT",
     "dependencies": {
