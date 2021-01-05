@@ -85,7 +85,7 @@ namespace Borodar.ScreenShooter
 
             Undo.RecordObject(_settings, "ScreenShooter settings");
 
-            OnGUICameraInput();            
+            //OnGUICameraInput();            
             OnGUIScreenshotConfigs();
             OnGUISaveFolderInput();
             OnGUITakeButton();
