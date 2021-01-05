@@ -24,23 +24,11 @@ namespace Borodar.ScreenShooter.Utils
         public static void TakeScreenshot(ScreenShooterSettings settings, ScreenshotConfig config)
         {
             var suffix = settings.AppendTimestamp ? "." + DateTime.Now.ToString("yyyyMMddHHmmssfff") : "";
-            TakeScreenshot(settings.Camera, settings.SaveFolder, settings.Tag, suffix, config);
+            TakeScreenshot(settings.SaveFolder, settings.Tag, suffix, config);
         }
 
-        public static void TakeScreenshot(Camera camera, string folderName, string prefix, string suffix, ScreenshotConfig screenshotConfig)
+        public static void TakeScreenshot(string folderName, string prefix, string suffix, ScreenshotConfig screenshotConfig)
         {
-            var scrTexture = new Texture2D(screenshotConfig.Width, screenshotConfig.Height, TextureFormat.RGB24, false);
-            var scrRenderTexture = new RenderTexture(scrTexture.width, scrTexture.height, 24);
-            var camRenderTexture = camera.targetTexture;
-
-            camera.targetTexture = scrRenderTexture;
-            camera.Render();
-            camera.targetTexture = camRenderTexture;
-
-            RenderTexture.active = scrRenderTexture;
-            scrTexture.ReadPixels(new Rect(0, 0, scrTexture.width, scrTexture.height), 0, 0);
-            scrTexture.Apply();
-
             SaveScreenShotTextureAsFile(folderName, prefix, suffix, screenshotConfig);
         }
 
