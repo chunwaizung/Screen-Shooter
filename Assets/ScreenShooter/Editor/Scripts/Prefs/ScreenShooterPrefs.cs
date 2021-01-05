@@ -21,7 +21,7 @@ namespace Borodar.ScreenShooter
     public class ScreenShooterPrefs
     {
         private const string HOME_FOLDER_PREF_KEY = "Borodar.ScreenShooter.HomeFolder.";
-        private const string HOME_FOLDER_DEFAULT = "Assets/ScreenShooter";
+        private const string HOME_FOLDER_DEFAULT = "Packages/com.integrated.screen-shooter";
         private const string HOME_FOLDER_HINT = "Change this setting to the new location of the \"ScreenShooter\" folder if you move it around in your project.";
 
         public static EditorPrefsString HomeFolder = new EditorPrefsString(HOME_FOLDER_PREF_KEY + ProjectName, "Folder Location", HOME_FOLDER_DEFAULT);
